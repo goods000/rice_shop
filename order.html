@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>订单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+	    <link rel="stylesheet" href="css/font.css" />
+	    <link rel="stylesheet" href="css/style1.css" />
+	</head>
+	<style>
+	.gao{margin-top: 45px;}
+	#nav { width: 100%;position: relative;left: 50%;margin-left: -50%;}
+	#nav ul li { width: 20%;height: 30px; float: left;  list-style: none;border-bottom: 1px solid #DBDBDB;}
+	.navContent {display: block; text-align: center;line-height: 30px; color: #666;font-size: 16px;}
+	.navTitle span {  color: #0f6518;font-size: 16px;}
+	.navTitle {display: block;  text-align: center;line-height: 30px; }
+	.two {display: none;}
+	.goods{display: flex;flex-direction: column;    padding: 0px 10px;}
+		.shangPing{display: flex;padding: 5px 0px;border-bottom: 1px solid #DBDBDB;    background: #fff;}
+		.img_left{margin-left: 20px;width: 25%;height: 25%;border-radius: 5px;}
+		.img_right{padding-right: 20px;margin-bottom: 0px;}
+		.souFan{position: absolute;bottom: 15px;}
+		.sreachImg{width: 25px; height: 25px; position: absolute;left: 60px;}
+		#sreach{width: 60% !important;}
+		.yu{color: #FFFFFF;background: #980000;border-radius: 3px;padding: 0px 3px;}
+		.yi{margin-top: 40px;}
+		.price_btn1{color: #ed5252;border: 1px solid #ed5252;font-size: 15px;border-radius: 3px;padding: 0px 6px;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;}
+		.o_price {color: #da2c46; font-weight: bold;font-size: 16px;}
+		.o_price b{font-size: 10px;color: #DA2C46;}
+		.qian{display: flex;justify-content: space-between;align-items: center;}
+		.chi{font-size: 12px;color: #898F94;padding: 20px 0px 10px;}
+		.beiBox {background: #FFFFFF;padding: 0px 20px;margin-top:10px;}
+		.beiBox span{font-size: 14px;color: #666666;}
+		.bx {text-overflow: ellipsis;-webkit-box-orient: vertical;display: -webkit-box; -webkit-line-clamp: 1; overflow: hidden;}
+	</style>
+	<body style="background: #ffff;">
+		<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>订单</h1>
+		
+		<div style="margin-top: 50px;">
+			<div id="nav">
+				<ul>
+					<li class="navTitle"><span class="navContent ">全部</span></li>
+					<li><span class="navContent">待付款</span></li>
+					<li><span class="navContent">待发货</span></li>
+					<li><span class="navContent">待收货</span></li>
+					<li><span class="navContent">已完成</span></li>
+				</ul>
+			</div>
+			<div class="tab">
+				
+				<div class="order">
+					<div class="order_nei">
+						<div class="shijian">
+							<div class="order_top">
+								<div class="order_topL">
+									<img src="img/sj.png" class="shi_img"/>
+									<span class="time">
+										2019-01-04
+									</span>
+								</div>
+								<div class="order_topR">
+									等待收货
+								</div>
+							</div>
+							<div class="shangPing">
+								<img src="img/goos.png" class="goods_img img_left"/>
+								<div class="goods img_right">
+									<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+									<p class="chi">尺寸: M</p>
+								</div>
+							</div>
+							<div class="beiBox">
+								<span>备注信息:</span>
+								<span class="bx">
+									特特特特特特特特特特辣特特特特特特特特特特辣特特特特特特特特特特辣
+								</span>
+							</div>
+							<div class="order_top" style="margin: 10px 0px;">
+								<div class="shij">
+									<span class="sp">共1件商品 合计：￥<span class="hj">39999.00</span></span>
+								</div>
+								<div class="order_btn">
+									确认收货
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+					<div class="order_nei">
+						<div class="shijian">
+							<div class="order_top">
+								<div class="order_topL">
+									<img src="img/sj.png" class="shi_img"/>
+									<span class="time">
+										2019-01-04
+									</span>
+								</div>
+								<div class="order_topR">
+									等待买家付款
+								</div>
+							</div>
+							<div class="shangPing">
+								<img src="img/goos.png" class="goods_img img_left"/>
+								<div class="goods img_right">
+									<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+									<p class="chi">尺寸: M</p>
+								</div>
+							</div>
+							<div class="beiBox">
+								<span>备注信息:</span>
+								<span class="bx">
+									特特特特特特特特特特辣
+								</span>
+							</div>
+							<div class="order_top" style="margin: 10px 0px;">
+								<div class="shij">
+									<span class="sp">共1件商品 合计：￥<span class="hj">39999.00</span></span>
+								</div>
+								<div class="order_btn1">
+									取消订单
+								</div>
+								<div class="order_btn">
+									付款
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+					<div class="order_nei">
+						<div class="shijian">
+							<div class="order_top">
+								<div class="order_topL">
+									<img src="img/sj.png" class="shi_img"/>
+									<span class="time">
+										2019-01-04
+									</span>
+								</div>
+								<div class="order_topR">
+									交易已取消
+								</div>
+							</div>
+							<div class="shangPing">
+								<img src="img/goos.png" class="goods_img img_left"/>
+								<div class="goods img_right">
+									<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+									<p class="chi">尺寸: M</p>
+								</div>
+							</div>
+							<div class="beiBox">
+								<span>备注信息:</span>
+								<span class="bx">特特特特特特特特特特辣特特特特特特特特特特辣</span>
+							</div>
+							<div class="order_top" style="margin: 10px 0px;">
+								<div class="shij">
+									<span class="sp">共1件商品 合计：￥<span class="hj">39999.00</span></span>
+								</div>
+								<div class="order_btn1">
+									删除订单
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="order two">
+					<div class="order_nei">
+						<div class="shijian">
+							<div class="order_top">
+								<div class="order_topL">
+									<img src="img/sj.png" class="shi_img"/>
+									<span class="time">
+										2019-01-04
+									</span>
+								</div>
+								<div class="order_topR">
+									等待买家付款
+								</div>
+							</div>
+							<div class="shangPing">
+								<img src="img/goos.png" class="goods_img img_left"/>
+								<div class="goods img_right">
+									<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+									<p class="chi">尺寸: M</p>
+								</div>
+							</div>
+							<div class="beiBox">
+								<span>备注信息:</span>
+								<span class="bx">
+									特特特特特特特特特特辣
+								</span>
+							</div>
+							<div class="order_top" style="margin: 10px 0px;">
+								<div class="shij">
+									<span class="sp">共1件商品 合计：￥<span class="hj">39999.00</span></span>
+								</div>
+								<div class="order_btn1">
+									取消订单
+								</div>
+								<div class="order_btn">
+									付款
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+				</div>
+			
+				<div class="order two">
+					<div class="order_nei">
+						<div class="shijian">
+							<div class="order_top">
+								<div class="order_topL">
+									<img src="img/sj.png" class="shi_img"/>
+									<span class="time">
+										2019-01-04
+									</span>
+								</div>
+								<div class="order_topR">
+									等待收货
+								</div>
+							</div>
+							<div class="shangPing">
+								<img src="img/goos.png" class="goods_img img_left"/>
+								<div class="goods img_right">
+									<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+									<p class="chi">尺寸: M</p>
+								</div>
+							</div>
+							<div class="beiBox">
+								<span>备注信息:</span>
+								<span class="bx">
+									特特特特特特特特特特辣特特特特特特特特特特辣特特特特特特特特特特辣
+								</span>
+							</div>
+							<div class="order_top" style="margin: 10px 0px;">
+								<div class="shij">
+									<span class="sp">共1件商品 合计：￥<span class="hj">39999.00</span></span>
+								</div>
+								<!--<div class="order_btn">
+									确认收货
+								</div>-->
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+					<div class="order_nei">
+						<div class="shijian">
+							<div class="order_top">
+								<div class="order_topL">
+									<img src="img/sj.png" class="shi_img"/>
+									<span class="time">
+										2019-01-04
+									</span>
+								</div>
+								<div class="order_topR">
+									等待收货
+								</div>
+							</div>
+							<div class="shangPing">
+								<img src="img/goos.png" class="goods_img img_left"/>
+								<div class="goods img_right">
+									<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+									<p class="chi">尺寸: M</p>
+								</div>
+							</div>
+							<div class="beiBox">
+								<span>备注信息:</span>
+								<span class="bx">
+									特特特特特特特特特特辣特特特特特特特特特特辣特特特特特特特特特特辣
+								</span>
+							</div>
+							<div class="order_top" style="margin: 10px 0px;">
+								<div class="shij">
+									<span class="sp">共1件商品 合计：￥<span class="hj">39999.00</span></span>
+								</div>
+								<!--<div class="order_btn">
+									确认收货
+								</div>-->
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+				</div>
+				
+				<div class="order two">
+					<div class="order_nei">
+						<div class="shijian">
+							<div class="order_top">
+								<div class="order_topL">
+									<img src="img/sj.png" class="shi_img"/>
+									<span class="time">
+										2019-01-04
+									</span>
+								</div>
+								<div class="order_topR">
+									等待收货
+								</div>
+							</div>
+							<div class="shangPing">
+								<img src="img/goos.png" class="goods_img img_left"/>
+								<div class="goods img_right">
+									<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+									<p class="chi">尺寸: M</p>
+								</div>
+							</div>
+							<div class="beiBox">
+								<span>备注信息:</span>
+								<span class="bx">
+									特特特特特特特特特特辣特特特特特特特特特特辣特特特特特特特特特特辣
+								</span>
+							</div>
+							<div class="order_top" style="margin: 10px 0px;">
+								<div class="shij">
+									<span class="sp">共1件商品 合计：￥<span class="hj">39999.00</span></span>
+								</div>
+								<div class="order_btn">
+									确认收货
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+				</div>
+				
+				
+				
+				<div class="order two">
+					<div class="order_nei">
+						<div class="shijian">
+							<div class="order_top">
+								<div class="order_topL">
+									<img src="img/sj.png" class="shi_img"/>
+									<span class="time">
+										2019-01-04
+									</span>
+								</div>
+								<div class="order_topR">
+									等待收货
+								</div>
+							</div>
+							<div class="shangPing">
+								<img src="img/goos.png" class="goods_img img_left"/>
+								<div class="goods img_right">
+									<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+									<p class="chi">尺寸: M</p>
+								</div>
+							</div>
+							<div class="beiBox">
+								<span>备注信息:</span>
+								<span class="bx">
+									特特特特特特特特特特辣特特特特特特特特特特辣特特特特特特特特特特辣
+								</span>
+							</div>
+							<div class="order_top" style="margin: 10px 0px;">
+								<div class="shij">
+									<span class="sp">共1件商品 合计：￥<span class="hj">39999.00</span></span>
+								</div>
+								<!--<div class="order_btn">
+									确认收货
+								</div>-->
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+					<div class="order_nei">
+						<div class="shijian">
+							<div class="order_top">
+								<div class="order_topL">
+									<img src="img/sj.png" class="shi_img"/>
+									<span class="time">
+										2019-01-04
+									</span>
+								</div>
+								<div class="order_topR">
+									等待收货
+								</div>
+							</div>
+							<div class="shangPing">
+								<img src="img/goos.png" class="goods_img img_left"/>
+								<div class="goods img_right">
+									<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+									<p class="chi">尺寸: M</p>
+								</div>
+							</div>
+							<div class="beiBox">
+								<span>备注信息:</span>
+								<span class="bx">
+									特特特特特特特特特特辣特特特特特特特特特特辣特特特特特特特特特特辣
+								</span>
+							</div>
+							<div class="order_top" style="margin: 10px 0px;">
+								<div class="shij">
+									<span class="sp">共1件商品 合计：￥<span class="hj">39999.00</span></span>
+								</div>
+								<!--<div class="order_btn">
+									确认收货
+								</div>-->
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+				</div>
+			
+			</div>
+		</div>
+	</dody>
+<script type="text/javascript">
+	var url = location.href;     //获取url
+        var typeNum=url.split('?')[1].split("=")[1];     //截取链接后type的值
+         $.each($('#nav ul li'),function (i) {
+             $('#nav ul li').eq(typeNum-1).addClass('navTitle').siblings().removeClass('navTitle');    //B页面tab选中样式
+             $('#nav ul .order').eq(typeNum-1).show().siblings().hide();  //B页面tab对应内容选中样式
+         });
+	
+	var $div_li = $('#nav ul li');
+        $('#nav ul li').click(function(){
+            $(this).addClass("navTitle").siblings().removeClass("navTitle"); 
+                var index =  $div_li.index(this);  
+            $("div.tab > div").eq(index).show().siblings().hide(); 
+		})
+</script>
+</html>

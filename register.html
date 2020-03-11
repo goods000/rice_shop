@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>注册</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<style type="text/css">
+	.get_code{background-color:#2f5608;height:42px;display: block;position: absolute;right:0px;top:5px;line-height: 42px;font-size: 12px !important; font-size: 12px !important;color: #FFFFFF !important;text-decoration: none !important;padding: 0px 10px !important;}
+	.get_code1{display: none;}
+</style>
+<body style="width: 100vw;height:100vh;background: #fff;padding:0px;background: url(img/loginBg.png)no-repeat;background-size: 100% 100%;">
+	<div class="login login_1">
+		<form style="margin-top: 20px;">	
+			<h3>注册</h3>
+			<!--<div class="locgin_i">
+				<img src="img/login_username.png" class="login_img"/>
+				<input type="text" placeholder="请输入您的账号" id="username"/>
+			</div>-->
+			<div class="locgin_i">
+				<img src="img/phone.png" class="login_img"/>
+				<input type="text" placeholder="请输入您的手机号码" id="phone"/>
+			</div>
+			<div class="locgin_i">
+				<img src="img/code.png" class="login_img"/>
+				<input type="text" placeholder="请输入您的短信验证码" id="code"/>
+				<a class="get_code" onclick="getCode(this)" id="J_getCode">获取验证码</a>
+				<a class="get_code get_code1">(<span id="J_second" >60</span>s后重发)</a>
+			</div>
+			<div class="locgin_i">
+				<img src="img/payPassword.png" class="login_img" id="password"/>
+				<input type="password" placeholder="请输入您的登录密码" />
+			</div>
+			<div class="locgin_i">
+				<img src="img/twoPassword.png" class="login_img" id="password2"/>
+				<input type="password" placeholder="请再次输入您的登录密码" />
+			</div>
+			
+			<div class="locgin_i">
+				<img src="img/payPassword.png" class="login_img" id="payPassword"/>
+				<input type="password" placeholder="请输入您的交易密码" />
+			</div>
+			<div class="locgin_i">
+				<img src="img/twoPassword.png" class="login_img" id="payPassword2"/>
+				<input type="password" placeholder="请再次输入您的交易密码" />
+			</div>
+			<div class="locgin_i">
+				<img src="img/sheng.png" class="login_img"/>
+				<input type="text" placeholder="请输入您的身份证号码" id="idCard"/>
+			</div>
+			<div class="locgin_i">
+				<img src="img/yao.png" class="login_img" id="yaoqing"/>
+				<input type="text" placeholder="请输入您的邀请码" />
+			</div>
+			
+			<input style="width: 100% !important;margin-top:13% !important;" type="button" class="tijiao" value="确认" />
+		</form>
+		
+		<img src="img/app.png" class="app_img"/>
+	</div>
+</body>
+<script type="text/javascript">
+
+/*获取验证码*/
+var isPhone = 1;
+function getCode(e){
+	checkPhone(); //验证手机号码
+	if(isPhone){
+		resetCode(); //倒计时
+	}else{
+		$('#phone').focus();
+	}
+	
+}
+//验证手机号码
+function checkPhone(){
+	var phone = $('#phone').val();
+	var pattern = /^1[0-9]{10}$/;
+	isPhone = 1;
+	if(phone == '') {
+		alert('请输入手机号码');
+		isPhone = 0;
+		return;
+	}
+	if(!pattern.test(phone)){
+		alert('请输入正确的手机号码');
+		isPhone = 0;
+		return;
+	}
+}
+//倒计时
+function resetCode(){
+	$('#J_getCode').hide();
+    $('#J_second').html('60');
+	$('.get_code1').show();
+	var second = 60;
+	var timer = null;
+	timer = setInterval(function(){
+		second -= 1;
+		if(second >0 ){
+			$('#J_second').html(second);
+		}else{
+			clearInterval(timer);
+			$('#J_getCode').show();
+			$('.get_code1').hide();
+		}
+	},1000);
+}	
+</script>
+</html>

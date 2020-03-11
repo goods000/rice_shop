@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<script src="js/swiper.min.js"></script>
+		
+		<script src="js/jquery.min.js"></script>
+	    <link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/style1.css">
+		<link rel="stylesheet" href="css/swiper.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+	</head>
+	<body>
+		<a href="javascript:window.history.back();">
+			<p class="fan">
+				<img src="img/return.png" class="return" />
+			</p>
+		</a>
+		<div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/lunbo2.png"/></div>
+            <div class="swiper-slide"><img src="img/lunbo2.png"/></div>
+            <div class="swiper-slide"><img src="img/lunbo2.png"/></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div class="xxy_content">
+    	<h6>
+    		<div class="yuzi">
+    			<img src="img/yu.png" class="yu_img"/>
+	    		<p id="ytitle">
+	    			预售
+	    		</p>
+    		</div>
+    		零食大礼包会很久首都航空水电费看见首付款较好的冯绍峰撒东方闪电
+    	</h6>
+    	<span>价格：1980</span>
+    	<dl>
+    		<dd>库存：188件</dd>
+    		<dd>月销：50件</dd>
+    	</dl>
+    </div>
+    <div class="xxy_xx">
+    	<h6>产品信息</h6>
+    	<img src="img/loginBg.png"/>
+    </div>
+    <div class="dibu1">
+    	<a href="index.html" class="iconfont icon-shouye2"><p>首页</p></a>
+    	<a href="shop.html" class="iconfont icon-shangcheng1"><p>商城</p></a>
+    	<a href="#"><span class="jr">加入购物车</span></a>
+    	<a href="#"><span class="gm">立即购买</span></a>
+    </div>
+    <div class="zf">
+    		<div class="zf_z">
+    			<i>
+    				<img src="img/goos.png"/>
+					
+    			</i>
+    			<div class="gw_j">
+						<span class="price">
+							<u>￥</u>167
+						</span>
+						<p class="gw_k">库存:1024件</p>
+						<p class="gw_x">选择规格,数量等分类</p>
+					</div>
+    			<div class="zf_right">
+    				
+    				<a href="#" class="gb"><img src="img/gb.png"/></a>
+    				
+    			<div class="gui">
+    				<p class="gTitle">规格</p>
+    				<div class="guiBox">
+    					<p class="gg">
+							250g
+						</p>
+						<p class="gg">
+							500g
+						</span>
+						<p class="gg">
+							1000g
+						</p>
+    				</div>
+    			</div>	
+    			</div>
+    			<div class="slgm">
+    				<span>购买数量</span>
+				  	<input class="addBtn add" type="button" value="+" />
+					<input class="join-money" type="text" value="1">
+					<input class="addBtn min" type="button" value="-" />
+					
+				</div>
+			<a href="order_details.html">确认</a>
+<script>
+	$(document).ready(function(){
+	$('#footer').load("nav.html")
+});
+</script>
+<script>
+var t = $(".join-money");
+var m = $(".allMoney").text();
+var mm = $(".allMoney");
+$(function(){
+$(".add").click(function() {
+    t.val(parseInt(t.val()) + 1); //点击加号输入框数值加1
+});
+$(".min").click(function(){
+    t.val(parseInt(t.val())-1); //点击减号输入框数值减1
+    if(t.val()<=0){
+        t.val(parseInt(t.val())+1); //最小值为1
+    }
+});
+
+}); 	
+
+</script>
+	
+    		</div>
+    </div>
+   
+    <script>
+
+    
+    $(document).ready(function(){
+    	$(".ljjf").click(function(){
+    		$(".zf").animate({top:'0px'})
+    	});
+    	$(".gb").click(function(){
+    		$(".zf").animate({top:'100vh'})
+    	});
+    });
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3500,
+        autoplayDisableOnInteraction: false
+        
+    });
+    </script>
+	</body>
+</html>

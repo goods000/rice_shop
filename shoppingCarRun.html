@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>购物车</title>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<style>
+		.bottom_nav dl dd:nth-child(3) a .dier {
+			display: block !important;
+		}
+		
+		.bottom_nav dl dd:nth-child(3) a .diyi {
+			display: none !important;
+		}
+		
+		.bottom_nav dl dd:nth-child(3) a span {
+			color: #6a923f;
+		}
+		{align-content: center;}
+		/*.di{border-top: 1px solid #DBDBDB;background-color:#fff;display: flex;justify-content: space-between;align-items: center;
+padding: 5px 0px 10px;position: fixed;bottom: 0px;width: 100%;}*/
+	</style>
+
+	<body>
+		<!--头部标题-->
+		<div id="header">
+			<a href="javascript:window.history.back();"><img src="img/return.png" class="header_img" /></a>
+			<span id="headerTitle">
+			购物车
+		</span>
+			<a href="javascript:void(0);" class="headerRight">完成</a>
+		</div>
+		<div style="width: 100%; height: 60px;background-color: #2e5407;margin-top: 48px;"></div>
+
+		<div class="goods_Box">
+			<div class="shopBox">
+				<img src="img/noChoice.png" class="choice_img" />
+				<img src="img/goos.png" class="goods_img" />
+				<div class="goods">
+					<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+					<p class="chi">尺寸: M</p>
+					<div class="qian">
+						<span class="price">
+						<b>￥</b>145667
+					</span>
+						<div class="shu">
+							<span class="jian">
+							-
+						</span>
+							<span class="num">
+							4
+						</span>
+							<span class="jia">
+							+
+						</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="shopBox">
+				<img src="img/noChoice.png" class="choice_img" />
+				<img src="img/goos.png" class="goods_img" />
+				<div class="goods">
+					<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+					<p class="chi">尺寸: M</p>
+					<div class="qian">
+						<span class="price">
+						<b>￥</b>167
+					</span>
+						<div class="shu">
+							<span class="jian">
+							-
+						</span>
+							<span class="num">
+							4
+						</span>
+							<span class="jia">
+							+
+						</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="shopBox">
+				<img src="img/noChoice.png" class="choice_img" />
+				<img src="img/goos.png" class="goods_img" />
+				<div class="goods">
+					<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+					<p class="chi">尺寸: M</p>
+					<div class="qian">
+						<span class="price">
+						<b>￥</b>7
+					</span>
+						<div class="shu">
+							<span class="jian">
+							-
+						</span>
+							<span class="num">
+							4
+						</span>
+							<span class="jia">
+							+
+						</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="di">
+			<div id="chioc">
+				<img src="img/noChoice.png" class="di_img" />
+				<span class="quan">
+					全选
+				</span>
+			</div>
+			<div id="shan">
+				<img src="img/shan.png" class="di_img1"/>
+				<span class="shanTitle">
+					删除
+				</span>
+			</div>
+		</div>	
+		<!--底部导航栏-->
+		<div id="footer"></div>
+	</body>
+	<script type="text/javascript">
+					$(".shopBox").each(function() {
+						$(this).find("img").first().click(function() {
+							if(toggle) {
+								$(this).attr("src", "img/noChoice.png")
+								toggle = false;
+							} else {
+								$(this).attr("src", "img/choice.png")
+								toggle = true;
+							}
+						});	
+					});
+		
+		$("#shan").click(function(){
+			$(".choice_img").each(function(i){
+				console.log($(".choice_img")[i].src)
+				if ($(".choice_img")[i].src=="img/choice.png") {
+					console.log(1);
+				} else{
+					console.log(2);
+				}
+			})
+		});
+		
+		$(function() {
+			$(".jia").click(function() {
+				$(this).prev().html(parseInt($(this).prev().html()) + 1);
+			});
+			$(".jian").click(function() {
+				$(this).next().html(parseInt($(this).next().html()) - 1);
+				if($(this).next().html() <= 0) {
+					$(this).next().html(parseInt($(this).next().html()) + 1); //最小值为1
+				}
+			});
+		});
+		
+		var toggle = true;
+		$("#chioc").click(function(){
+			if (toggle) {
+				$(this).children("img").attr("src","img/choice.png");
+				$(".choice_img").attr("src", "img/choice.png");
+				toggle = false;
+			}else{
+				$(".choice_img").attr("src", "img/noChoice.png")
+				$(".di_img").attr("src", "img/noChoice.png")
+				toggle = true;
+			}
+		});
+		
+	
+	</script>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html style="background: #FFFFFF !important;">
+	<head>
+		<meta charset="utf-8">
+		<title>申请代理</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+	    <link rel="stylesheet" href="css/font.css" />
+	    <link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div style=" padding-top: 20px;display: flex;justify-content: space-between;height: 200px; background-image: url(img/shenqingBg.png);background-repeat: no-repeat;background-size: 100% 100%;">
+			<a href="javascript:window.history.back();"><img src="img/return.png" class="header_img" /></a>
+			<span id="headerTitle" style="margin-top: -5px;">
+			申请代理
+		</span>
+			<a href="shenqing_record.html" class="headerRight">申请记录</a>
+		</div>
+		<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+			
+		<!--审核前-->
+		<div id="shenqing">
+			<div class="inputBox">
+				<div class="from">
+					<label>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</label>
+					<input type="text" placeholder="输入您的真实姓名" name="username" id="username" />
+				</div>	
+				
+				<div class="from">
+					<label>证件号码:</label>
+					<input type="text" placeholder="输入您的身份证号码" name="hao" id="hao" />
+				</div>	
+				
+				<div class="from">
+					<label>联系方式:</label>
+					<input type="text" placeholder="输入您的联系电话" name="" id="address" />
+				</div>
+				
+				<div class="from">
+					<label>代理地址:</label>
+					<span class="outer">
+						<select name="" class="sheng" name="province" id="province">
+							<option value="请选择">请选择</option>
+						</select>
+						<img src="img/jiantou.png" class="jiantou"/>
+						<select name="" class="sheng" name="city" id="city">
+							<option value="请选择">请选择</option>
+						</select>
+						<img src="img/jiantou.png" class="jiantou"/>
+						<select name="" class="sheng" name="town" id="town">
+							<option value="请选择">请选择</option>
+						</select>
+						<img src="img/jiantou.png" class="jiantou"/>
+					</span>
+				</div>	
+			</div>
+			
+			<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+			
+			<div class="yzBox">
+				<p class="yzTitles">请拍摄并上传你的身份证照片</p>
+				<div class="sm">
+					<div class="yzImg">
+						 <div class="line">
+	                         <input type="hidden" id="uploadOrderid" name="id" value="">
+	                         <a style="display: block;background:url(img/shenqingz.png);background-size:100% 100%;width:150px;margin:auto;height:150px;position: relative;" href="javascript:;" class="a-upload">
+	                         <span class="yz_title">
+								上传/拍摄正面
+							</span>
+	                         <input type="file" name="file1" id="xdaTanFileImg_1" style="width:150px;height:150px;opacity:0;position:absolute;z-index:2;" onchange="xmTanUploadImg_1(this)" accept="image/*"/>
+	                            <i style="position:absolute;top:0px;left:0px;width:150px;height:150px;overflow:hidden;z-index:1;"><img style="width: 100%;display:block;" id="xmTanImg_1"/></i>
+	                        <div style="width: 80px;height: 80px;" id="xmTanDiv_1"></div>
+	                             </a>             
+                        </div>
+					</div>
+					<div class="yzImg">
+						<div class="line">
+                         <input type="hidden" id="uploadOrderid" name="id" value="">
+                         <a style="display: block;background:url(img/shenqingz.png);background-size:100% 100%;width:150px;margin:auto;height:150px;position: relative;" href="javascript:;" class="a-upload">
+                         <span class="yz_title">
+							上传/拍摄反面
+						</span>
+                         <input type="file" name="file1" id="xdaTanFileImg_1" style="width:150px;height:150px;opacity:0;position:absolute;z-index:2;" onchange="xmTanUploadImg_2(this)" accept="image/*"/>
+                            <i style="position:absolute;top:0px;left:0px;width:150px;height:150px;overflow:hidden;z-index:1;"><img style="width: 100%;display:block;" id="xmTanImg_2"/></i>
+                        <div style="width: 80px;height: 80px;" id="xmTanDiv_1"></div>
+                             </a>             
+                        </div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+			
+			<div class="yzBox">
+				<p class="yzTitles">代理登记:<span class="daili">(请选择您申请的代理等级)</span></p>
+				
+				<div class="quBox">
+					<span class="ziQu">
+						区代理
+					</span>
+					<span class="ziQu">
+						市代理
+					</span>
+					<span class="ziQu">
+						省代理
+					</span>
+				</div>
+			</div>
+			
+			<div id="yz_btn">
+				<input type="button" class="yzbutton" value="提交申请" />
+			</div>
+			
+		</div>
+		
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/area.js"></script>
+		<script src="js/select.js"></script>
+	</body>
+	<script>
+		$(".quBox").each(function(){
+	    $(this).find("span").first().addClass("ziQu1");
+		});
+	
+		var $div_li = $('.quBox span');
+        $('.quBox span').click(function(){
+            $(this).addClass("ziQu1").siblings().removeClass("ziQu1"); 
+                
+		})
+		
+		function xmTanUploadImg_1(obj) {
+        var file = obj.files[0];
+		console.log(obj);console.log(file);
+		console.log("file.size = " + file.size); //file.size 单位为byte
+		var reader = new FileReader();
+		//读取文件过程方法
+		reader.onloadstart = function (e) {
+		console.log("开始读取....");
+		}
+		reader.onprogress = function (e) {
+		console.log("正在读取中....");
+		}
+		reader.onabort = function (e) {
+		console.log("中断读取....");
+		}
+		reader.onerror = function (e) {
+		console.log("读取异常....");
+		}
+		reader.onload = function (e) {
+		console.log("成功读取....");
+		var size = file.size/1024;
+		var size = size/1024;
+		if (size>4) {
+		alert('上传图片不能超过4MB，请重新选择！');return false;
+		}
+		var img = document.getElementById("xmTanImg_1");
+		img.src = e.target.result;
+		//或者 img.src = this.result; //e.target == this
+		}
+		reader.readAsDataURL(file)
+		}
+	function xmTanUploadImg_2(obj) {
+        var file = obj.files[0];
+		console.log(obj);console.log(file);
+		console.log("file.size = " + file.size); //file.size 单位为byte
+		var reader = new FileReader();
+		//读取文件过程方法
+		reader.onloadstart = function (e) {
+		console.log("开始读取....");
+		}
+		reader.onprogress = function (e) {
+		console.log("正在读取中....");
+		}
+		reader.onabort = function (e) {
+		console.log("中断读取....");
+		}
+		reader.onerror = function (e) {
+		console.log("读取异常....");
+		}
+		reader.onload = function (e) {
+		console.log("成功读取....");
+		var size = file.size/1024;
+		var size = size/1024;
+		if (size>4) {
+		alert('上传图片不能超过4MB，请重新选择！');return false;
+		}
+		var img = document.getElementById("xmTanImg_2");
+		img.src = e.target.result;
+		//或者 img.src = this.result; //e.target == this
+		}
+		reader.readAsDataURL(file)
+		}
+	</script>
+</html>

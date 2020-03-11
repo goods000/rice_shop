@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>购物车</title>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<style>
+		.bottom_nav dl dd:nth-child(3) a .dier {
+			display: block !important;
+		}
+		
+		.bottom_nav dl dd:nth-child(3) a .diyi {
+			display: none !important;
+		}
+		
+		.bottom_nav dl dd:nth-child(3) a span {
+			color: #6a923f;
+		}
+		
+		#headerTitle {
+			text-align: center;
+		}
+	</style>
+
+	<body>
+		<!--头部标题-->
+		<div id="header1">
+			<!--<a href="javascript:void(0);"><img src="img/return.png" class="header_img" /></a>-->
+			<span id="headerTitle1">
+			购物车
+		</span>
+			<a href="shoppingCarRun.html" class="headerRight1">管理</a>
+		</div>
+		<div style="width: 100%; height: 60px;background-color: #2e5407;margin-top: 48px;"></div>
+
+		<div class="goods_Box">
+			<div class="shopBox">
+				<img src="img/noChoice.png" class="choice_img" />
+				<img src="img/goos.png" class="goods_img" />
+				<div class="goods">
+					<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+					<p class="chi">尺寸: M</p>
+					<div class="qian">
+						<span class="price">
+						<b>￥</b>
+						<span class="jiao">167</span>
+					</span>
+						<div class="shu">
+							<span class="jian">
+							-
+						</span>
+							<span class="num">
+							4
+						</span>
+							<span class="jia">
+							+
+						</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="shopBox">
+				<img src="img/noChoice.png" class="choice_img" />
+				<img src="img/goos.png" class="goods_img" />
+				<div class="goods">
+					<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+					<p class="chi">尺寸: M</p>
+					<div class="qian">
+						<span class="price">
+						<b>￥</b>
+						<span class="jiao">16</span>
+					</span>
+						<div class="shu">
+							<span class="jian">
+							-
+						</span>
+							<span class="num">
+							4
+						</span>
+							<span class="jia">
+							+
+						</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="shopBox">
+				<img src="img/noChoice.png" class="choice_img" />
+				<img src="img/goos.png" class="goods_img" />
+				<div class="goods">
+					<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+					<p class="chi">尺寸: M</p>
+					<div class="qian">
+						<span class="price">
+							<b>￥</b>
+							<span class="jiao">67</span>
+						</span>
+						<div class="shu">
+							<span class="jian">
+								-
+							</span>
+							<span class="num">
+								4
+							</span>
+							<span class="jia ">
+								+
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="shopBox">
+				<img src="img/noChoice.png" class="choice_img" />
+				<img src="img/goos.png" class="goods_img" />
+				<div class="goods">
+					<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+					<p class="chi">尺寸: M</p>
+					<div class="qian">
+						<span class="price">
+						<b>￥</b>
+						<span class="jiao">17</span>
+						</span>
+						<div class="shu">
+							<span class="jian">
+							-
+						</span>
+							<span class="num">
+							4
+						</span>
+							<span class="jia">
+							+
+						</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="di">
+			<div id="chioc">
+				<img src="img/noChoice.png" class="di_img" />
+				<span class="quan">
+					全选
+				</span>
+			</div>
+			<div id="tip">
+				<div class="he">
+					<span class="chi">
+						合计:
+					</span>
+					<span class="price" style="color: #000000;padding: 0px 20px 0px 5px;">
+						<b style="color: #666;">￥</b>
+						<span class="zong">0</span>
+					</span>
+				</div>
+				<div class="jie">
+					结算(<span>2</span>)
+				</div>
+			</div>
+		</div>
+		<!--底部导航栏-->
+		<div id="footer"></div>
+	</body>
+	<script type="text/javascript">
+					/*$(".shopBox").each(function() {
+						$(this).find("img").first().click(function() {
+							if(toggle) {
+								$(this).attr("src", "img/noChoice.png")
+								toggle = false;
+							} else {
+								$(this).attr("src", "img/choice.png")
+								toggle = true;
+								var jiao =0;
+								$(this).next().next().children().find("span .jiao").each(function(){
+									jiao +=  parseInt($(this).html())
+								});
+								$(".zong").html(jiao);
+							}
+						});	
+					});*/
+					
+					$('.choice_img').click(function(){
+						let isActive = $(this).attr('isActive');
+						if(isActive){
+							$(this).attr("src", "img/noChoice.png");
+							$(this).attr('isActive',0);
+						}else{
+							$(this).attr("src", "img/choice.png");
+							$(this).attr('isActive',1);
+						}
+						$(".zong").html(getMonery())
+					})
+					let getMonery = () => {
+						let goods = $(".shopBox");
+						let cont = 0;
+						goods.find('.choice_img').each(function(index,item){
+							let isActive = $(this).attr('isActive');
+							if(isActive){
+								cont += Number( $(this).next().next().children().find("span .jiao")[0].innerHTML)
+							}
+						})
+						return cont
+					}
+					
+					
+					/*$('.choice_img').click(function(){
+						let isActive = $(this).attr('isActive');
+						if(isActive){
+							$(this).attr("src", "img/noChoice.png");
+							$(this).attr('isActive',0);
+						}else{
+							$(this).attr("src", "img/choice.png");
+							$(this).attr('isActive',1);
+						}
+						$(".zong").html(getMonery())
+					})
+					let getMonery = () => {
+						let goods = $(".shopBox");
+						let cont = 0;
+						goods.find('.choice_img').each(function(index,item){
+							let isActive = $(this).attr('isActive');
+							if(isActive){
+								cont += Number( $(this).next().next().children().find("span .jiao")[0].innerHTML)
+							}
+						})
+						return cont
+					}*/
+					
+					
+					let sun = () => {
+						var zong = 0;
+							$(".shopBox").find('.choice_img').each(function(index,item){
+								zong += Number( $(this).next().next().children().find("span .jiao")[0].innerHTML)
+							})
+						return zong
+					}
+					var toggle = true;
+					$("#chioc").click(function(){
+						if (toggle) {
+							$(this).children("img").attr("src","img/choice.png");
+							$(".choice_img").attr("src", "img/choice.png");
+							toggle = false;
+							$(".zong").html(sun())
+						}else{
+							$(".choice_img").attr("src", "img/noChoice.png")
+							$(".di_img").attr("src", "img/noChoice.png")
+							toggle = true;
+							$(".zong").html(0);
+						}
+					});
+					$(function() {
+						$(".jia").click(function() {
+							$(this).prev().html(parseInt($(this).prev().html()) + 1);
+						});
+						$(".jian").click(function() {
+							$(this).next().html(parseInt($(this).next().html()) - 1);
+							if($(this).next().html() <= 0) {
+								$(this).next().html(parseInt($(this).next().html()) + 1); //最小值为1
+							}
+						});
+					});
+	</script>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>合作人端口</title>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<style>
+	#nav { width: 100%;position: relative;left: 50%;margin-left: -50%;}
+	#nav ul li { width: 33%;height: 30px; float: left;  list-style: none;}
+	.navContent {display: block; text-align: center;line-height: 30px; color: #999;}
+	.navTitle span {  color: #0f6518;}
+	.navTitle {display: block;  text-align: center;line-height: 30px; border-bottom: 1px solid #0f6518;}
+	.two {display: none;}
+	</style>
+
+	<body style="background-color: #F6F6F6;">
+		<!--头部-->
+		<div id="header1">
+			<!--<a href="javascript:window.history.back();" class="headerLeft"><img src="img/return.png" class="header_img" /></a>-->
+			<span id="headerTitle1">
+			合作人端口
+		</span>
+		</div>
+			<div id="heHeader" style="background: url(img/geHeader.png) no-repeat;background-size:100% 100% ;">
+				<div class="he" style="margin-top: 80px;">
+					<div id="paHeader">
+						<img src="img/logo.png" class="headerImg1">
+						<div class="tu_Box">
+							<p class="mingTitle">账号: 984384HJ</p>
+							<p class="idTitle">ID: HJ43D434</p>
+						</div>
+					</div>
+					<div class="p_yong">
+						<span id="p_yong_title">
+							<img src="img/quan.png" class="quan_img"/>
+							<span class="pp">
+								我的佣金
+							</span>
+							<span class="p_title">
+								1200
+							</span>
+						</span>
+						<a href="tixian.html" id="p_yong_num">
+							提现
+						</a>
+					</div>
+				</div>
+			</div>
+
+
+		<a href="yong_record.html" class="yongxian p_yong">
+			<span id="p_yong_title">
+				<img src="img/mxImg.png" class="quan_img"/>
+					<span class="pp1">
+						佣金明细
+					</span>	
+			</span>
+			<span id="next">
+				<img src="img/next.png" class="next_img"/>
+			</span>
+		</a>
+		
+		<div class="daili">
+			<span id="p_yong_title1">
+				<img src="img/daishang.png" class="quan_img"/>
+					<span class="pp2">
+						我的代理
+					</span>	
+			</span>
+			<div id="nav">
+				<ul>
+					<li class="navTitle"><span class="navContent ">区代</span></li>
+					<li><span class="navContent">市代</span></li>
+					<li><span class="navContent">省代</span></li>
+				</ul>
+			</div>
+			<div class="tab">
+				<div class="qu">
+					<div class="qu_Box">
+						<span class="qu_title">
+							广东省深圳市龙华区代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							广东省深圳市龙华区代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							广东省深圳市龙华区代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							广东省深圳市龙华区代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							湖南省长沙市代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							广东省深圳市龙华区代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							湖南省长沙市代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							广东省深圳市龙华区代理
+						</span>
+					</div>
+				</div>
+				<div class="qu two">
+					<div class="qu_Box">
+						<span class="qu_title">
+							湖南省长沙市代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							广东省深圳市龙华区代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							湖南省长沙市代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							广东省深圳市龙华区代理
+						</span>
+					</div>
+				</div>
+				<div class="qu two">
+					<div class="qu_Box">
+						<span class="qu_title">
+							浙江省代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							湖南省长沙市代理
+						</span>
+					</div>
+					<div class="qu_Box">
+						<span class="qu_title">
+							广东省深圳市龙华区代理
+						</span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!--返回个人中心-->
+		<div id="ge_btn">
+			<a href="javascript:window.history.back();"><input type="button" class="tuichu" value="返回个人中心" /></a>
+		</div>
+
+	</body>
+<script type="text/javascript">
+	var $div_li = $('#nav ul li');
+        $('#nav ul li').click(function(){
+            $(this).addClass("navTitle").siblings().removeClass("navTitle"); 
+                var index =  $div_li.index(this);  
+            $("div.tab > div").eq(index).show().siblings().hide(); 
+		})
+</script>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<title>订单详情</title>
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/layer.js"></script>
+		<link rel="stylesheet" href="css/style1.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/layer.css" />
+	</head>
+	<style>
+		.goods {display: flex;flex-direction: column;padding: 0px 10px;justify-content: space-around;}
+		.shangPing {display: flex;padding: 15px 0px;border-bottom: 1px solid #DBDBDB;background: #fff;}
+		.img_left {margin-left: 20px;width: 25%;height: 25%;border-radius: 5px;}
+		.img_right {padding-right: 20px;}
+		.souFan {position: absolute;bottom: 15px;}
+		.sreachImg {width: 25px;height: 25px;position: absolute;left: 60px;}
+		#sreach {width: 60% !important;}
+		.yu {color: #FFFFFF;background: #980000;border-radius: 3px;padding: 0px 3px;}
+		/*.yi {margin-top: 40px;}*/
+		.price_btn1 {color: #ed5252;border: 1px solid #ed5252;font-size: 15px;border-radius: 3px;padding: 0px 6px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+		.o_price {color: #da2c46;font-weight: bold;font-size: 16px;}
+		.o_price b {font-size: 10px;color: #DA2C46;}
+		.qian {display: flex;justify-content: space-between;align-items: center;}
+		.tups_img {width: 30px;height: 30px;}
+		.di {border-top: 1px solid #DBDBDB;background-color: #fff;display: flex;justify-content: space-between;align-items: center;padding: 20px 0px 20px;position: fixed;bottom: 0px;width: 100%;}
+		#di_right {margin-left: 20px;}
+		#jie {margin-right: 20px;}
+		.jieTitle {color: #FFFFFF;font-size: 16px;padding: 5px 40px;background: #0F6518;border-radius: 3px;}
+		.li_sc p {text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;width: 300px;}
+		.beiBox {background: #FFFFFF;padding: 0px 20px;}
+		.bei {padding: 10px 10px;border: 0px;border-radius: 5px;margin: 5px 0px 15px 0px;}
+		#td {display: flex;justify-content: center;border: 1px solid #0F6518;border-radius: 5px;padding: 5px 0px;color: #0F6518;margin-top: 10px;}
+		#zf {overflow: hidden;padding: 10px;display: none;}
+		label {font-size: 14px;color: #333;}
+		.mi {padding: 10px 10px;border: 1px solid #EEEEEE;border-radius: 5px;margin: 5px 0px 15px 0px;}
+		.wl{padding:10px 0px 10px 0px;background: #FFFFFF;}
+		.wl p{padding-left: 40px;width: 80%;}
+		.wl p span{padding-left: 10px;}
+		.order_topR{color: #da2c46;font-size: 15px;}
+	</style>
+
+	<body>
+		<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>订单详情</h1>
+		<div class="jsxx gt">
+			<ul>
+					<li class="li_sc">
+						<i>收货人：少林佛祖威少</i><em>1383838438</em>
+						<p style="color: #999;">广东省深圳市龙华区</p>
+					</li>
+					<!--<li class="li_sc">
+						<span id="td">
+							＋请添加地址
+						</span>
+					</li>-->
+			</ul>
+
+			<div class="shangPing">
+				<img src="img/goos.png" class="goods_img img_left" />
+				<div class="goods img_right">
+					<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+					<div class="qian">
+						<span class="o_price">
+								<b>￥</b>138
+							</span>
+						<span class="sl">
+								×1
+							</span>
+					</div>
+				</div>
+			</div>
+			<div class="shangPing">
+				<img src="img/goos.png" class="goods_img img_left" />
+				<div class="goods img_right">
+					<p class="goods_title">春夏季中长群黑色领长荷叶袖边收腰显瘦大摆网纱裙子</p>
+					<div class="qian">
+						<span class="o_price">
+								<b>￥</b>138
+							</span>
+						<span class="sl">
+								×1
+							</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="beiBox">
+				<span>备注  : </span>
+				<input type="text" placeholder="备注" class="bei" name="" id="" value="" />
+			</div>
+			<div style="width: 100%;height: 15px;background: #F6F6F6;"></div>
+
+			<div class="wl" style="border-bottom: 1px solid #DBDBDB;">
+				<div class="order_top">
+					<div class="order_topL" style="border-left: 6px solid #0F6518;padding-left: 5px;">
+						订单信息
+					</div>
+				</div>
+					<p>订单编号:<span>465468485485485485</span></p>
+					<p>下单时间:<span>2017-07-18</span></p>
+					<p>付款时间:<span>2017-07-18</span></p>
+					<p>发货时间:<span>2017-08-30</span></p>
+			</div>
+			<div class="wl">
+				<div class="order_top" style="padding: 5px 20px;">
+					<div class="order_topL" style="border-left: 6px solid #0F6518;padding-left: 5px;">
+						订单状态
+					</div>
+					<div class="order_topR">
+						待发货
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+	<script>
+		var toggle = true;
+		$(".list").each(function() {
+			$(this).find("img").click(function() {
+				if(toggle) {
+					$(this).attr("src", "img/choice.png").parent().siblings().find(".choice_img").attr("src", "img/noChoice.png")
+					toggle = false;
+				} else {
+					$(this).attr("src", "img/Choice.png").parent().siblings().find(".choice_img").attr("src", "img/noChoice.png")
+					toggle = true;
+				}
+			});
+		});
+
+		//					var toggle = true;
+		//					$(".choice_img").click(function(){
+		//						if (toggle) {
+		//							$(this).attr("src","img/choice.png");
+		//							toggle = false;
+		//						}else{
+		//							$(this).attr("src", "img/noChoice.png")
+		//							toggle = true;
+		//						}
+		//					});
+
+		function zf() {
+			layer.open({
+				title: "输入密码",
+				type: 1,
+				content: $("#zf"),
+				//style:"background-color:#de484f;color:#red;",
+				offset: "c",
+				area: ["300px", "auto"],
+				btn: ['确定', '取消'],
+				yes: function(index) {
+					pay(3);
+				}
+			});
+		}
+	</script>
+
+</html>

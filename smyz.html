@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html style="background: #FFFFFF !important;">
+	<head>
+		<meta charset="utf-8">
+		<title>实名验证</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+	    <link rel="stylesheet" href="css/font.css" />
+	    <!--<link rel="stylesheet" href="css/style1.css" />-->
+	    <link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div id="header1">
+			<a href="javascript:window.history.back();" class="headerLeft"><img src="img/return.png" class="header_img" /></a>
+			<span id="headerTitle1">
+				实名验证
+			</span>
+		</div>	
+		<!--<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>实名验证</h1>-->
+		
+		<!--审核前-->
+		<div id="yz" class="gt">
+			<div class="inputBox">
+				<div class="from">
+					<label>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</label>
+					<input type="text"placeholder="输入您的真实姓名" name="username" id="username"" />
+				</div>	
+				<div class="from">
+					<label>证件号码:</label>
+					<input type="text" placeholder="输入您的身份证号码" name="hao" id="hao"" />
+				</div>	
+			</div>
+			
+			<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+			
+			<div class="yzBox">
+				<p class="yzTitle">请拍摄并上传你的身份证照片</p>
+				<div class="sm">
+					<div class="yzImg">
+						<div class="line">
+                         <input type="hidden" id="uploadOrderid" name="id" value="">
+                         <a style="display: block;background:url(img/yzTu.png);background-size:100% 100%;width:150px;margin:auto;height:150px;position: relative;" href="javascript:;" class="a-upload">
+                         <span class="yz_title">
+							上传/拍摄正面
+						</span>
+                         <input type="file" name="file1" id="xdaTanFileImg_1" style="width:150px;height:150px;opacity:0;position:absolute;z-index:2;" onchange="xmTanUploadImg_1(this)" accept="image/*"/>
+                            <i style="position:absolute;top:0px;left:0px;width:150px;height:150px;overflow:hidden;z-index:1;"><img style="width: 100%;display:block;" id="xmTanImg_1"/></i>
+                        <div style="width: 80px;height: 80px;" id="xmTanDiv_1"></div>
+                             </a>             
+                        </div>
+					</div>
+					<div class="yzImg">
+						
+						<div class="line">
+                         <input type="hidden" id="uploadOrderid" name="id" value="">
+                         <a style="display: block;background:url(img/yzTuBei.png);background-size:100% 100%;width:150px;margin:auto;height:150px;position: relative;" href="javascript:;" class="a-upload">
+                         <span class="yz_title">
+							上传/拍摄反面
+						</span>
+                         <input type="file" name="file1" id="xdaTanFileImg_1" style="width:150px;height:150px;opacity:0;position:absolute;z-index:2;" onchange="xmTanUploadImg_2(this)" accept="image/*"/>
+                            <i style="position:absolute;top:0px;left:0px;width:150px;height:150px;overflow:hidden;z-index:1;"><img style="width: 100%;display:block;" id="xmTanImg_2"/></i>
+                        <div style="width: 80px;height: 80px;" id="xmTanDiv_1"></div>
+                             </a>             
+                        </div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+			
+			<div class="yzBox">
+				<p class="yzTitle">拍摄省份证要求:</p>
+				<p class="yzTitle1">大陆公民持有的本人有效身份证:</p>
+				<p class="yzTitle2">拍摄时确保身份证<b class="bTitle">边框完整，字体清晰，亮度均匀;</b></p>
+			</div>
+			
+			<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+			
+			<div class="smNav">
+				<div class="sm_box">
+					<img src="img/zhu1.png" class="sm_img"/>
+					<p class="sm_title">正确</p>
+				</div>
+				<div class="sm_box">
+					<img src="img/zhu2.png" class="sm_img"/>
+					<p class="sm_title">边框缺失</p>
+				</div>
+				<div class="sm_box">
+					<img src="img/zhu3.png" class="sm_img"/>
+					<p class="sm_title">内容模糊</p>
+				</div>
+				<div class="sm_box">
+					<img src="img/zhu4.png" class="sm_img"/>
+					<p class="sm_title">闪光强烈</p>
+				</div>
+			</div>
+			
+			<div style="width: 100%;height: 5px;background: #F6F6F6;"></div>
+			
+			<div id="yz_btn">
+				<input type="button" class="yzbutton" value="身份验证" />
+			</div>
+			
+		</div>
+		
+		<!--审核中-->
+		<!--<div class="yz_Middle">
+			<img src="img/yzs.png"/>
+			<p class="yzMTitle">资料提交成功，请等待管理员审核！</p>
+		</div>-->
+		
+		<!--审核完成-->
+		<!--<div class="yz_Middle">
+			<img src="img/yzw.png"/>
+			<p class="yzMTitle">恭喜您，已通过身份认证！</p>
+		</div>-->
+		
+	</dody>
+	<script>
+	function xmTanUploadImg_1(obj) {
+        var file = obj.files[0];
+		console.log(obj);console.log(file);
+		console.log("file.size = " + file.size); //file.size 单位为byte
+		var reader = new FileReader();
+		//读取文件过程方法
+		reader.onloadstart = function (e) {
+		console.log("开始读取....");
+		}
+		reader.onprogress = function (e) {
+		console.log("正在读取中....");
+		}
+		reader.onabort = function (e) {
+		console.log("中断读取....");
+		}
+		reader.onerror = function (e) {
+		console.log("读取异常....");
+		}
+		reader.onload = function (e) {
+		console.log("成功读取....");
+		var size = file.size/1024;
+		var size = size/1024;
+		if (size>4) {
+		alert('上传图片不能超过4MB，请重新选择！');return false;
+		}
+		var img = document.getElementById("xmTanImg_1");
+		img.src = e.target.result;
+		//或者 img.src = this.result; //e.target == this
+		}
+		reader.readAsDataURL(file)
+		}
+	function xmTanUploadImg_2(obj) {
+        var file = obj.files[0];
+		console.log(obj);console.log(file);
+		console.log("file.size = " + file.size); //file.size 单位为byte
+		var reader = new FileReader();
+		//读取文件过程方法
+		reader.onloadstart = function (e) {
+		console.log("开始读取....");
+		}
+		reader.onprogress = function (e) {
+		console.log("正在读取中....");
+		}
+		reader.onabort = function (e) {
+		console.log("中断读取....");
+		}
+		reader.onerror = function (e) {
+		console.log("读取异常....");
+		}
+		reader.onload = function (e) {
+		console.log("成功读取....");
+		var size = file.size/1024;
+		var size = size/1024;
+		if (size>4) {
+		alert('上传图片不能超过4MB，请重新选择！');return false;
+		}
+		var img = document.getElementById("xmTanImg_2");
+		img.src = e.target.result;
+		//或者 img.src = this.result; //e.target == this
+		}
+		reader.readAsDataURL(file)
+		}
+	</script>
+</html>
